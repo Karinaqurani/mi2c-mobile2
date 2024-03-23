@@ -1,7 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:mobile/screen_page/page_bottom_navigation.dart';
+import 'package:mobile/screen_page/page_list_berita.dart';
+import 'package:mobile/screen_page/page_list_users.dart';
 import 'package:mobile/screen_page/page_navigation_bar.dart';
+import 'package:mobile/screen_page/page_search_list.dart';
 
 
 class PageBeranda extends StatelessWidget {
@@ -123,7 +127,52 @@ class PageBeranda extends StatelessWidget {
                   ),
                   color: Colors.orange,
                   textColor: Colors.white,
-                )
+                ),
+          SizedBox(height: 10,),
+          MaterialButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)
+            => PageSearchList()
+            ));
+          },
+            child: Text('Search',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12
+              ),
+            ),
+            color: Colors.orange,
+            textColor: Colors.white,
+          ),
+              SizedBox(height: 5,),
+              MaterialButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                =>PageListUsers()
+                ));
+              },
+                child: Text('List User',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12
+                  ),
+                ),
+                color: Colors.orange,
+                textColor: Colors.white,
+              ),
+              SizedBox(height: 5,),
+              MaterialButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                =>PageListBerita()
+                ));
+              },
+                child: Text('List Berita',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12
+                  ),
+                ),
+                color: Colors.orange,
+                textColor: Colors.white,
+              )
             ],
           ),
         ),
